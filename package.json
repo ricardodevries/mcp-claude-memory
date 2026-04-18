@@ -1,0 +1,35 @@
+{
+  "name": "@ricardodevries/mcp-claude-memory",
+  "version": "0.1.0",
+  "description": "MCP server providing persistent memory with context layers, semantic search, and session briefings for Claude Code",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "bin": {
+    "mcp-claude-memory": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "Ricardo de Vries",
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "^3.4.1",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "better-sqlite3": "^11.9.1",
+    "sqlite-vec": "^0.1.6",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.3",
+    "prettier": "3.8.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}

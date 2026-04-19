@@ -32,12 +32,12 @@ Then add to your project's `.mcp.json` (Claude Code starts the server automatica
 
 Memories are organized into four layers with configurable token budgets:
 
-| Layer | Name            | Budget       | Purpose                                       |
-| ----- | --------------- | ------------ | --------------------------------------------- |
-| L0    | Permanent Rules | 2,000 tokens | Immutable constraints, coding standards       |
-| L1    | Session-Start   | 4,000 tokens | Project state, active decisions, known issues |
-| L2    | Task-Specific   | 6,000 tokens | Retrieved on relevance match via search       |
-| L3    | Ephemeral       | 2,000 tokens | Scratchpad, auto-expires on session end       |
+| Layer | Name            | Budget        | Purpose                                       |
+| ----- | --------------- | ------------- | --------------------------------------------- |
+| L0    | Permanent Rules | 2,000 tokens  | Immutable constraints, coding standards       |
+| L1    | Session-Start   | 4,000 tokens  | Project state, active decisions, known issues |
+| L2    | Task-Specific   | 10,000 tokens | Retrieved on relevance match via search       |
+| L3    | Ephemeral       | 2,000 tokens  | Scratchpad, auto-expires on session end       |
 
 ### Core CRUD
 

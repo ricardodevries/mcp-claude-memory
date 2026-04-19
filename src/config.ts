@@ -42,7 +42,7 @@ export function loadConfig(): MemoryServerConfig {
     modelCacheDir: process.env.MEMORY_MODEL_CACHE
       ? resolvePath(process.env.MEMORY_MODEL_CACHE)
       : resolve(SERVER_ROOT, 'models'),
-    tokenBudgets: { L0: 2000, L1: 4000, L2: 6000, L3: 2000 },
+    tokenBudgets: { L0: 2000, L1: 4000, L2: 10000, L3: 2000 },
     dedup: { writeThreshold: 0.92, mergeThreshold: 0.95, relatedThreshold: 0.8 },
     namespace: process.env.MEMORY_NAMESPACE ?? 'default',
   };

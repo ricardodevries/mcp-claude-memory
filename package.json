@@ -19,7 +19,7 @@
   "author": "Ricardo de Vries",
   "license": "MIT",
   "dependencies": {
-    "@huggingface/transformers": "^3.4.1",
+    "@huggingface/transformers": "^4.2.0",
     "@modelcontextprotocol/sdk": "^1.12.1",
     "better-sqlite3": "^12.10.0",
     "sqlite-vec": "^0.1.6",

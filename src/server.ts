@@ -44,7 +44,7 @@ export function createServer(db: Database.Database, config: MemoryServerConfig):
               source: z.string().optional().describe('Origin identifier (e.g. "user", "agent:planner", "system")'),
               namespace: z.string().optional().describe('Namespace for multi-project isolation. Default: "default"'),
               tags: z.array(z.string()).optional().describe('Tags for filtering'),
-              metadata: z.record(z.unknown()).optional().describe('Arbitrary metadata'),
+              metadata: z.record(z.string(), z.unknown()).optional().describe('Arbitrary metadata'),
               expires_at: z.string().optional().describe('ISO 8601 expiration datetime'),
             }),
           )
@@ -110,7 +110,7 @@ export function createServer(db: Database.Database, config: MemoryServerConfig):
         context_layer: z.number().int().min(0).max(3).optional(),
         importance: z.number().int().min(1).max(5).optional(),
         tags: z.array(z.string()).optional(),
-        metadata: z.record(z.unknown()).optional(),
+        metadata: z.record(z.string(), z.unknown()).optional(),
         expires_at: z.string().nullable().optional().describe('Set null to remove expiration'),
       },
     },
@@ -220,7 +220,7 @@ export function createServer(db: Database.Database, config: MemoryServerConfig):
       description: 'Begin a new memory session. Optionally returns a session briefing.',
       inputSchema: {
         namespace: z.string().optional(),
-        metadata: z.record(z.unknown()).optional(),
+        metadata: z.record(z.string(), z.unknown()).optional(),
         include_briefing: z.boolean().optional().describe('Include a session-start briefing. Default: true'),
         query: z.string().optional().describe('Focus area for briefing relevance'),
       },
@@ -370,7 +370,7 @@ export function createServer(db: Database.Database, config: MemoryServerConfig):
         source_id: z.string().describe('Source memory ID'),
         target_id: z.string().describe('Target memory ID'),
         relation_type: z.enum(RELATION_TYPES).describe('Relation type'),
-        metadata: z.record(z.unknown()).optional(),
+        metadata: z.record(z.string(), z.unknown()).optional(),
       },
     },
     async (params) => {
